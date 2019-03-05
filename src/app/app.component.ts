@@ -22,6 +22,18 @@ export class AppComponent {
   min_steps: number = -2000;
   max_steps: number = 1000;
 
+  formatLabel(value: number | null) {
+    if (!value) {
+      return 0;
+    }
+
+    if (value >= 1000) {
+      return Math.round(value / 1000) + 'k';
+    }
+
+    return value;
+  }
+
   counter(i: number) {
     return new Array(i);
   }
